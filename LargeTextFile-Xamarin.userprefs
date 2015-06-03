@@ -1,1 +1,13 @@
-﻿<Properties StartupItem="LargeTextFile-Xamarin/LargeTextFile-Xamarin.csproj" />
+﻿<Properties StartupItem="LargeTextFile-Xamarin/LargeTextFile-Xamarin.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.iPad 1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LargeTextFile-Xamarin/ViewController.cs">
+    <Files>
+      <File FileName="LargeTextFile-Xamarin/ViewController.cs" Line="80" Column="4" />
+      <File FileName="LargeTextFile-Xamarin/Main.storyboard" Line="30" Column="183" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

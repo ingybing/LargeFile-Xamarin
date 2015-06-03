@@ -23,6 +23,11 @@ namespace DotNetReleaseTest
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
+		public override void ViewDidAppear (bool animated)
+		{
+			this.numberOfTimes = this.Slider.Value;
+		}
+
 		public override void DidReceiveMemoryWarning ()
 		{
 			base.DidReceiveMemoryWarning ();
@@ -41,7 +46,6 @@ namespace DotNetReleaseTest
 				{
 					var progress = (float)(iteration / numberOfTimes);
 					this.ProgressBar.SetProgress (progress, true);
-
 					this.ProgressPercentageLabel.Text = string.Format ("{0}%", Math.Round (progress * 100, 0));
 				});
 		}
@@ -72,16 +76,12 @@ namespace DotNetReleaseTest
 
 		private void DoWork ()
 		{
-			var filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "LargeFile.txt");
-
+			//var filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "Better.txt");		//33,554,432 byte file. Mostly runs 100 iterations ok.
+			var filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "WillCrash.txt");   //33,554,433 byte file. Fails with in 5 iterations.
 			string contents;
 
 			// Reading via File Static doesn't work.
 			contents = File.ReadAllText (filePath);
-
-			// Do some processing of contents.
-
-			Console.WriteLine(contents);
 		}
 
 		/*****************************************************************
@@ -95,6 +95,8 @@ namespace DotNetReleaseTest
 				reader.Close();
 			}
 
+
+
 			// Reading via files stream doesn't work.
 			var buffer = new byte[50000000]; // 50 mb buffer.
 
@@ -105,6 +107,29 @@ namespace DotNetReleaseTest
 			}
 
 			contents = Encoding.UTF8.GetString (buffer);
+
+
+
+		 	// Reading via files stream doesn't work.
+			var buffer = new byte[1000000]; // 1 mb buffer.
+			var stringBuilder = new StringBuilder();
+
+			using (var fileStream = File.OpenRead (filePath)) 
+			{
+				var bytesRead = 0;
+				do 
+				{
+					bytesRead = fileStream.Read (buffer, 0, buffer.Length);
+					if(bytesRead > 0)
+					{
+						stringBuilder.Append(Encoding.UTF8.GetString(buffer));
+					}
+				} while(bytesRead == buffer.Length);
+
+				fileStream.Close ();
+			}
+
+			contents = stringBuilder.ToString ();
 		*/
 
 		partial void GarbageCollect (NSObject sender)

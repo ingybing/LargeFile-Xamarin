@@ -27,7 +27,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-oK-TEG">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-oK-TEG">
                                 <rect key="frame" x="14" y="49" width="572" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WA3-90-y9h"/>
@@ -36,7 +36,7 @@
                                     <action selector="SliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="H41-WO-RIM"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8Y-tE-6m9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8Y-tE-6m9">
                                 <rect key="frame" x="167" y="20" width="417" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZyT-eh-lZ1"/>
