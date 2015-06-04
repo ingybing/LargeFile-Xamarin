@@ -25,6 +25,9 @@ namespace DotNetReleaseTest
 		UIKit.UILabel ProgressPercentageLabel { get; set; }
 
 		[Outlet]
+		UIKit.UISegmentedControl SegmenteControl { get; set; }
+
+		[Outlet]
 		UIKit.UISlider Slider { get; set; }
 
 		[Action ("GarbageCollect:")]
@@ -32,6 +35,9 @@ namespace DotNetReleaseTest
 
 		[Action ("Go:")]
 		partial void Go (Foundation.NSObject sender);
+
+		[Action ("SegmentedControlValueChanged:")]
+		partial void SegmentedControlValueChanged (Foundation.NSObject sender);
 
 		[Action ("SliderValueChanged:")]
 		partial void SliderValueChanged (Foundation.NSObject sender);
@@ -56,6 +62,11 @@ namespace DotNetReleaseTest
 			if (ProgressPercentageLabel != null) {
 				ProgressPercentageLabel.Dispose ();
 				ProgressPercentageLabel = null;
+			}
+
+			if (SegmenteControl != null) {
+				SegmenteControl.Dispose ();
+				SegmenteControl = null;
 			}
 
 			if (Slider != null) {

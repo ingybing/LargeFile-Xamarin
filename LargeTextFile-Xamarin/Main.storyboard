@@ -97,6 +97,20 @@
                                     <action selector="GarbageCollect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JXg-US-mzo"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w2E-VW-yKA">
+                                <rect key="frame" x="223" y="323" width="154" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="t0h-Zg-Wu1"/>
+                                    <constraint firstAttribute="width" constant="154" id="z82-IM-h9s"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Better"/>
+                                    <segment title="Will Crash"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Yb3-zB-nX1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -107,11 +121,13 @@
                             <constraint firstItem="3" firstAttribute="top" secondItem="PuM-wi-z9Y" secondAttribute="bottom" constant="8" id="E3X-Vu-KaH"/>
                             <constraint firstItem="L8Y-tE-6m9" firstAttribute="leading" secondItem="qOy-cI-82C" secondAttribute="trailing" constant="8" id="QUw-jP-5Hy"/>
                             <constraint firstAttribute="centerY" secondItem="adp-uc-f9U" secondAttribute="centerY" id="VvK-Xr-liR"/>
+                            <constraint firstItem="w2E-VW-yKA" firstAttribute="top" secondItem="adp-uc-f9U" secondAttribute="bottom" constant="8" id="XTI-gh-b4J"/>
                             <constraint firstAttribute="centerX" secondItem="adp-uc-f9U" secondAttribute="centerX" id="bpo-77-Zvd"/>
                             <constraint firstItem="qOy-cI-82C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dB7-TS-Cpa"/>
                             <constraint firstItem="4Uo-0H-S7n" firstAttribute="top" secondItem="RHo-oK-TEG" secondAttribute="bottom" constant="8" id="eMw-Jy-r1b"/>
                             <constraint firstItem="3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fdM-G9-l8v"/>
                             <constraint firstItem="qOy-cI-82C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gNp-EL-QOB"/>
+                            <constraint firstAttribute="centerX" secondItem="w2E-VW-yKA" secondAttribute="centerX" id="h2Q-9h-QOa"/>
                             <constraint firstItem="3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kou-Mt-CSE"/>
                             <constraint firstItem="PuM-wi-z9Y" firstAttribute="top" secondItem="RHo-oK-TEG" secondAttribute="bottom" constant="46" id="mkw-Ul-Fd3"/>
                             <constraint firstItem="4Uo-0H-S7n" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="r2s-Bq-YAm"/>
@@ -126,6 +142,7 @@
                         <outlet property="NumberOfTimesLabel" destination="L8Y-tE-6m9" id="VOo-50-UhF"/>
                         <outlet property="ProgressBar" destination="3" id="EFv-Ff-raM"/>
                         <outlet property="ProgressPercentageLabel" destination="PuM-wi-z9Y" id="obj-ky-mng"/>
+                        <outlet property="SegmenteControl" destination="w2E-VW-yKA" id="URc-di-oPI"/>
                         <outlet property="Slider" destination="RHo-oK-TEG" id="mY9-B9-ste"/>
                     </connections>
                 </viewController>

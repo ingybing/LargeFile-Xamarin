@@ -12,6 +12,8 @@ namespace DotNetReleaseTest
 	public partial class ViewController : UIViewController
 	{
 		private double numberOfTimes = 1;
+
+		private nint selectedSegment;
 		
 		public ViewController (IntPtr handle) : base (handle)
 		{
@@ -26,6 +28,7 @@ namespace DotNetReleaseTest
 		public override void ViewDidAppear (bool animated)
 		{
 			this.numberOfTimes = this.Slider.Value;
+			this.selectedSegment = this.SegmenteControl.SelectedSegment;
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -38,6 +41,11 @@ namespace DotNetReleaseTest
 		{
 			this.numberOfTimes = Math.Round(this.Slider.Value,0);
 			this.NumberOfTimesLabel.Text = numberOfTimes.ToString();
+		}
+
+		partial void SegmentedControlValueChanged (NSObject sender)
+		{
+			this.selectedSegment = this.SegmenteControl.SelectedSegment;
 		}
 
 		void UpdateProgress (double iteration)
@@ -76,8 +84,16 @@ namespace DotNetReleaseTest
 
 		private void DoWork ()
 		{
-			//var filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "Better.txt");		//33,554,432 byte file. Mostly runs 100 iterations ok.
-			var filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "WillCrash.txt");   //33,554,433 byte file. Fails with in 5 iterations.
+			string filePath;
+			if(this.selectedSegment == 0)
+			{
+				filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "Better.txt");		//33,554,432 byte file. Mostly runs 100 iterations ok.
+			}
+			else
+			{
+				filePath = Path.Combine(NSBundle.MainBundle.ResourcePath, "WillCrash.txt");   //33,554,433 byte file. Fails with in 5 iterations.
+			}
+
 			string contents;
 
 			// Reading via File Static doesn't work.

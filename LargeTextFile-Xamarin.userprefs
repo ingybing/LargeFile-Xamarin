@@ -2,8 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.iPad 1" />
   <MonoDevelop.Ide.Workbench ActiveDocument="LargeTextFile-Xamarin/ViewController.cs">
     <Files>
-      <File FileName="LargeTextFile-Xamarin/ViewController.cs" Line="80" Column="4" />
-      <File FileName="LargeTextFile-Xamarin/Main.storyboard" Line="30" Column="183" />
+      <File FileName="LargeTextFile-Xamarin/ViewController.cs" Line="100" Column="43" />
+      <File FileName="LargeTextFile-Xamarin/Main.cs" Line="12" Column="1" />
+      <File FileName="LargeTextFile-Xamarin/ViewController.designer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
